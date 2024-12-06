@@ -1,4 +1,5 @@
 from aocd import get_data, submit
+import mypackage.aoc2024.testing_data as testing_data
 
 
 def test_for_safety(values: list[int]) -> bool:
@@ -43,17 +44,10 @@ def part_b(data: str) -> int:
         values = list(map(int, line.split()))
         result += test_for_safety_dampened(values)
     return result
-
-
-test_data = """7 6 4 2 1
-1 2 7 8 9
-9 7 6 2 1
-1 3 2 4 5
-8 6 4 4 1
-1 3 6 7 9"""
     
 
 if __name__ == "__main__":
+    test_data = testing_data.day_2
     assert part_a(test_data) == 2
     assert part_b(test_data) == 4
     data = get_data(day=2, year=2024)

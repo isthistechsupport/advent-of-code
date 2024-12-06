@@ -1,4 +1,5 @@
 from aocd import get_data, submit
+import mypackage.aoc2024.testing_data as testing_data
 
 
 def parse_data(data: str) -> list[list[str]]:
@@ -71,37 +72,6 @@ def part_b(data:str) -> int:
     return result
 
 
-test_data_a_1 = """..X...
-.SAMX.
-.A..A.
-XMAS.S
-.X...."""
-
-
-test_data_a_2 = """MMMSXXMASM
-MSAMXMSMSA
-AMXSXMAAMM
-MSAMASMSMX
-XMASAMXAMM
-XXAMMXXAMA
-SMSMSASXSS
-SAXAMASAAA
-MAMMMXMMMM
-MXMXAXMASX"""
-
-
-test_data_b_1 = """.M.S......
-..A..MSMS.
-.M.S.MAA..
-..A.ASMSM.
-.M.S.M....
-..........
-S.S.S.S.S.
-.A.A.A.A..
-M.M.M.M.M.
-.........."""
-
-
 def render_cleaned_grid(grid: list[list[str]], results: list[tuple[int, int]]) -> str:
     for x_g in range(len(grid)):
         for y_g in range(len(grid[x_g])):
@@ -111,6 +81,9 @@ def render_cleaned_grid(grid: list[list[str]], results: list[tuple[int, int]]) -
 
 
 if __name__ == "__main__":
+    test_data_a_1 = testing_data.day_4_a_1
+    test_data_a_2 = testing_data.day_4_a_2
+    test_data_b_1 = testing_data.day_4_b_1
     data = get_data(day=4, year=2024)
     assert part_a(test_data_a_1) == 4
     assert part_a(test_data_a_2) == 18

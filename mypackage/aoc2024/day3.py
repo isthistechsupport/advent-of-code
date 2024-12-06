@@ -1,4 +1,5 @@
 import re
+import mypackage.aoc2024.testing_data as testing_data
 from aocd import get_data, submit
 
 
@@ -23,11 +24,9 @@ def part_b(data: str) -> int:
     return result_b
 
 
-test_data_a = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
-test_data_b = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
-
-
 if __name__ == "__main__":
+    test_data_a = testing_data.day_3_a
+    test_data_b = testing_data.day_3_b
     assert part_a(test_data_a) == 161
     assert part_b(test_data_b) == 48
     data = get_data(day=3, year=2024)

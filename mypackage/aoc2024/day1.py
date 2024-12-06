@@ -1,4 +1,5 @@
 from aocd import get_data, submit
+import mypackage.aoc2024.testing_data as testing_data
 
 
 def parse_data(data: str) -> tuple[list[int], list[int]]:
@@ -28,15 +29,8 @@ def part_b(data: str) -> int:
     return result
 
 
-test_data = """3   4
-4   3
-2   5
-1   3
-3   9
-3   3"""
-
-
 if __name__ == "__main__":
+    test_data = testing_data.day_1
     assert part_a(test_data) == 11
     assert part_b(test_data) == 31
     data = get_data(day=1, year=2024)
