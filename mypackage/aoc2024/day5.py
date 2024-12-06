@@ -29,9 +29,8 @@ def get_update_median(update: list[int]) -> int:
 
 def check_page(page: int, rules: list[tuple[int, int]], update: list[int]) -> bool:
     for first, second in rules:
-        if page == second:
-            if first in update:
-                return False
+        if page == second and first in update:
+            return False
     return True
 
 

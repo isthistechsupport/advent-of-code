@@ -75,7 +75,7 @@ def part_b(data:str) -> int:
 def render_cleaned_grid(grid: list[list[str]], results: list[tuple[int, int]]) -> str:
     for x_g in range(len(grid)):
         for y_g in range(len(grid[x_g])):
-            if not (x_g, y_g) in results:
+            if (x_g, y_g) not in results:
                 grid[x_g][y_g] = "."
     return "\n".join(["".join(line) for line in grid])
 
